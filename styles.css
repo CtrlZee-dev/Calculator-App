@@ -1,0 +1,401 @@
+@media(min-width:319px) {
+
+  body {
+    /* background-color: hsl(222, 26%, 31%); */
+    color: hsl(0, 0%, 100%);
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    height: 100vh; /* Full viewport height */
+    margin: 0; /* Remove default body margin */
+    padding: 0 ; /* Add some padding for spacing */
+    max-width:420px;
+    background-color: hsl(222, 26%, 31%); /* Default body background */
+
+  }
+  .us{
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 0px;
+  }
+  .us>p{
+    margin-left:  110px;
+    margin-bottom: 0px;
+    
+  }
+
+  .radio1,
+  .radio2,
+  .radio3 {
+    position: absolute;
+    /*top: -9999px; - don't use may cause focus/scolling issues*/
+    left: -9999px
+  }
+
+ 
+
+
+  .calculator{
+    /* background-color: hsl(223, 31%, 20%); */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr ;
+    grid-template-rows: 1fr 1fr 1fr 1fr ;
+    gap: 15px;
+    padding: 15px;
+    border-radius: 4px;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    max-width: 400px; /* Set maximum width */
+
+
+    
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    /* Align form items to the right */
+    max-width: 420px; /* Set maximum width */
+    margin: 0;
+    padding: 0 20px; /* Add padding for spacing */
+  }
+  
+  #display{
+    /* background-color: hsl(224, 36%, 15%); */
+    height: 50px;
+    border: 0;
+    border-radius: 8px;
+    display:flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    color: white;
+    text-align: left;
+
+    background-color: hsl(224, 36%, 15%); /* Default display background */
+  
+  }
+  input{
+    font-family: "League Spartan", sans-serif;
+    padding: 10px;
+    border: 0;
+    border-radius: 8px;
+    text-align: center; /* Center text within input */
+    cursor: pointer;
+  
+  }
+  .numbers ,
+  .operator{
+    /* background-color:  hsl(30, 25%, 89%); */
+    color: hsl(221, 14%, 31%);
+    font-weight: bold;
+   
+  }
+  .operator:hover,
+  .numbers:hover{
+    /* background-color: hsl(7, 16%, 65%); */
+  }
+  .clear{
+    /* background-color: hsl(225, 21%, 49%); */
+    color:  hsl(0, 0%, 100%);
+    font-weight: bold;
+  }
+  .clear:hover{
+    /* background-color: hsl(224, 28%, 35%); */
+  }
+  
+   #reset{
+    grid-column-start: 1 ;
+    grid-column-end: 3;
+   }
+   #equalsTo{
+    grid-column-start: 3 ;
+    grid-column-end: 5;
+    /* background-color: hsl(6, 63%, 50%) ; */
+    color:  hsl(0, 0%, 100%);
+   }
+   #equalsTo:hover{
+   background-color:hsl(6, 70%, 34%) ; 
+   }
+ 
+   
+   
+  /*test of 3 position toggle switch*/
+
+  .themes-switch {
+   
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    font-size:1em;
+    width: 100%;
+  }
+
+
+
+  
+  
+  .labelTop1,.labelTop2,.labelTop3{
+    width:2em;
+    display:inline-block;
+  
+    position: relative;
+   margin-right: 0px;
+   padding-right: 0px;
+  
+  }
+
+
+
+  .sliderContainer{
+    height: 0.8em;
+    width: 5em;
+ 
+    position: relative;
+    padding: 2px;
+    display:flex;
+
+    flex-direction: column;
+    align-items: flex-end; 
+
+    margin: 2px 16px 15px;
+  
+
+
+
+  
+  }
+
+
+  .topLabelContainer {
+    display: flex;
+    margin: 0px 0px 0px 0px;
+ 
+  }
+
+
+
+  .label1,
+  .label2,
+  .label3 {
+    height: 100%;
+    width: 100%;
+    padding: 2px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgb(200, 200, 200);
+    border-radius: 30px;
+  }
+
+  
+  .radio1:checked ~ span .label1,
+  .radio1:checked ~ span .label3,
+  .radio2:checked ~ span .label1,
+  .radio2:checked ~ span .label2,
+  .radio3:checked ~ span .label2,
+  .radio3:checked ~ span .label3 {
+    /*hide labels */
+    position: absolute;
+    /*top: -9999px;*/
+    left: -9999px
+  }
+  .slider {
+    height: 0.8em;
+    width: 1em;
+    margin: 4px;
+    position: absolute;
+    display: inline-block;
+    pointer-events: none; /*ie fallback may be required */
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color:rgb(100,100,100);
+    -webkit-transition: .4s;
+    transition: .4s;
+
+    border-radius: 50%;
+  }
+
+  .radio2:checked ~ span .slider {
+    -webkit-transform: translateX(2em);
+    -ms-transform: translateX(2em);
+    transform: translateX(2em);
+  }
+
+  .radio3:checked ~ span .slider {
+    -webkit-transform: translateX(4em);
+    -ms-transform: translateX(4em);
+    transform: translateX(4em);
+  }
+
+  .labelTop1,.labelTop2,.label3{
+    color:white;
+  }
+  .radio1:checked ~ .topLabelContainer .labelTop1{
+    color:white;
+    text-shadow: 0 0 1px rgb(255,100,100), 0 0 8px rgb(255,0,0);
+  }
+
+  .radio1:checked ~ .sliderContainer .slider{
+    background:rgb(255,0,0);
+  }
+
+  .radio2:checked ~ .topLabelContainer .labelTop2{
+    color:white;
+    text-shadow: 0 0 1px rgb(255,50,255), 0 0 6px rgb(255,0,255);
+
+  }
+  
+
+  .radio2:checked ~ .sliderContainer .slider{
+    background:hsl(25, 98%, 40%);
+  }
+
+  .radio3:checked ~ .topLabelContainer .labelTop3{
+    color:white;
+    text-shadow: 0 0 1px rgb(100,100,255), 0 0 8px rgb(0,0,255);
+  }
+  .radio3:checked ~ .sliderContainer .slider{
+    background:hsl(176, 100%, 44%);
+
+
+
+  }
+
+
+  
+/* ------------------------THEME -------ONE---------------------------------
+*/
+ /* Styles for Theme 1 */
+/* Theme 1 */
+/* Theme 1 styles */
+body.theme1 {
+    background-color: hsl(222, 26%, 31%);
+}
+
+.calculator.theme1 {
+  background-color: hsl(223, 31%, 20%);
+}
+
+.calculator.theme1 .numbers,
+.calculator.theme1 .operator {
+  background-color: hsl(30, 25%, 89%);
+  color: hsl(221, 14%, 31%);
+}
+
+.calculator.theme1 .clear {
+  background-color: hsl(225, 21%, 49%);
+  color: hsl(0, 0%, 100%);
+}
+
+.calculator.theme1 #equalsTo {
+  background-color: hsl(6, 63%, 50%);
+  color: hsl(0, 0%, 100%);
+}
+
+.calculator.theme1 #reset {
+  /* Specify styles for reset button in Theme 1 */
+}
+
+.calculator.theme1 #display {
+  background-color: hsl(224, 36%, 15%);
+  color: white;
+}
+
+/* Theme 2 */
+body.theme2 {
+  background-color:hsl(0, 0%, 93%);
+  color: black;
+}
+
+.calculator.theme2 {
+  background-color: hsl(0, 5%, 81%);
+}
+body.theme2 h1,
+body.theme2 p ,
+body.theme2 label{
+    color: hsl(60, 10%, 19%);
+}
+
+
+.calculator.theme2 .numbers,
+.calculator.theme2 .operator {
+  background-color: hsl(45, 7%, 89%);
+  /* Specify other styles for numbers and operators in Theme 2 */
+  color:  hsl(60, 10%, 19%);
+}
+
+.calculator.theme2 .clear {
+  background-color: hsl(185, 42%, 37%);
+  /* Specify other styles for clear button in Theme 2 */
+}
+
+.calculator.theme2 #equalsTo {
+  background-color: hsl(25, 98%, 40%);
+  /* Specify other styles for equalsTo button in Theme 2 */
+}
+
+
+body.theme2 #display {
+  background-color: white;
+  color: black;
+}
+
+/* Theme 3 */
+/* Theme 3 styles */
+body.theme3 {
+  background-color: hsl(268, 75%, 9%);
+}
+
+
+.calculator.theme3,
+body.theme3 #display{
+  background-color: hsl(268, 71%, 12%)
+}
+body.theme3 h1,
+body.theme3 p ,
+body.theme3 label {
+    color: hsl(52, 100%, 62%)
+}
+
+
+.calculator.theme3 .numbers,
+.calculator.theme3 .operator {
+  background-color: hsl(268, 47%, 21%);
+  /* Specify other styles for numbers and operators in Theme 2 */
+  color:  hsl(52, 100%, 62%)
+}
+
+.calculator.theme3 .clear {
+  background-color: hsl(281, 89%, 26%);
+
+  /* Specify other styles for clear button in Theme 2 */
+}
+
+.calculator.theme3 #equalsTo {
+  background-color:  hsl(176, 100%, 44%);
+  color: black;
+
+  /* Specify other styles for equalsTo button in Theme 2 */
+}
+
+
+body.theme3 #display {
+
+  color: white;
+}
+
+
+
+
+
+  
+}
+
+
+
